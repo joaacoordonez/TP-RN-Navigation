@@ -6,7 +6,10 @@ import NoticeScreen from '../screens/HomeScreen/NoticeScreen';
 import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 import ShowProfileScreen from '../screens/ProfileScreen/ShowProfileScreen';
 import SearchScreen from '../screens/SearchScreen/SearchScreen';
+import ResultsSearchScreen from '../screens/SearchScreen/ResultsSearchScreen';
 import ReviewScreen from '../screens/ReviewScreen/ReviewScreen';
+import VerReviewScreen from '../screens/ReviewScreen/VerReviewScreen';
+
 
 const HomeStack = createNativeStackNavigator();
 function HomeStackScreen() {
@@ -34,7 +37,7 @@ function SearchStackScreen() {
   return (
     <SearchStack.Navigator>
         <SearchStack.Screen name='SearchScreen' component={SearchScreen}/>
-        
+        <SearchStack.Screen name='ResultsSearchScreen' component={ResultsSearchScreen}/>
     </SearchStack.Navigator>
   )
 }
@@ -44,7 +47,7 @@ function ReviewStackScreen() {
   return (
     <ReviewStack.Navigator>
         <ReviewStack.Screen name='ReviewScreen' component={ReviewScreen}/>
-        
+        <ReviewStack.Screen name='VerReviewScreen' component={VerReviewScreen}/>
     </ReviewStack.Navigator>
   )
 }

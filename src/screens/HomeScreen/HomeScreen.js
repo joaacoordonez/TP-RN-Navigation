@@ -1,7 +1,7 @@
 import { Button, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import NoticeScreen from './NoticeScreen';
+import iconHome from '@expo/vector-icons/AntDesign';
 
 
 function HomeScreen() {
@@ -15,6 +15,7 @@ function HomeScreen() {
     }
   };
   return (
+    
     <View>
       <Text>Home</Text>
       <TextInput placeholder='¿Como estás?' value={mensaje} keyboardType="default" onChangeText={(texto) => setMensaje(texto)}></TextInput>

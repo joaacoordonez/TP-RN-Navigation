@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 const ProfileScreen = () => {
   const navigation = useNavigation();
   const [nombre, setNombre] = useState("");
+  const [numTel, setNumTel] = useState("");
   return (
     <View>
       <Text style={styles.titulo}>Ingresá tus datos</Text>
@@ -13,10 +14,15 @@ const ProfileScreen = () => {
         value={nombre}
         onChangeText={setNombre}
       />
+      <TextInput
+        placeholder="Ingresá tu número de teléfono"
+        value={numTel}
+        onChangeText={setNumTel}
+      />
       <Button
         title="Continuar"
         onPress={() =>
-          navigation.navigate("ShowProfileScreen", { nombreUsuario: nombre })
+          navigation.navigate("ShowProfileScreen", { nombreUsuario: nombre, numeroDeTelefono: numTel })
         }
       />
     </View>
