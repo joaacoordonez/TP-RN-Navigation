@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,10 +19,14 @@ const ReviewScreen = () => {
         value={review}
         onChangeText={setReview}
       />
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("VerReviewScreen", { review: review })}>
-      <Text>Ver mi review</Text>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() =>
+          navigation.navigate("VerReviewScreen", { review: review })
+        }
+      >
+        <Text>Ver mi review</Text>
       </TouchableOpacity>
-      
     </View>
   );
 };
@@ -27,6 +37,7 @@ const styles = StyleSheet.create({
   contenedor: {
     flex: 1,
     padding: 16,
+    backgroundColor: "#fff",
   },
   titulo: {
     fontSize: 18,

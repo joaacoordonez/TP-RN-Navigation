@@ -1,6 +1,13 @@
-import { StyleSheet, Text, View, TextInput, Button, Image, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
-import { useNavigation } from '@react-navigation/native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import Producto from "../../../assets/Producto.png";
 
 const SearchScreen = () => {
@@ -9,24 +16,32 @@ const SearchScreen = () => {
     <View style={styles.contenedor}>
       <Text style={styles.titulo}>Bienvenido al Buscador</Text>
       <Image source={Producto} style={styles.imagen} />
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("ResultsSearchScreen")}>
+      <TextInput
+        placeholder="¿Que puntaje le das del 1 al 10 a este producto?"
+        keyboardType="number-pad"
+      ></TextInput>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("ResultsSearchScreen")}
+      >
         <Text>Ver Producto</Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default SearchScreen
+export default SearchScreen;
 
 const styles = StyleSheet.create({
   contenedor: {
     flex: 1,
     padding: 16,
+    backgroundColor: "#fff",
   },
   titulo: {
-    fontSize: 30,
+    fontSize: 18,
     fontWeight: "bold",
-    marginTop: 20,
+    marginTop: 12,
     textAlign: "center",
   },
   imagen: {
@@ -34,8 +49,8 @@ const styles = StyleSheet.create({
     height: 200,
     resizeMode: "contain",
     borderRadius: 12,
-    marginTop: 35
-  }, 
+    marginTop: 35,
+  },
   button: {
     backgroundColor: "#40E0D0",
     padding: 10,
@@ -43,4 +58,4 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
   },
-})
+});

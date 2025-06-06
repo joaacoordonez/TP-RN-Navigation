@@ -7,7 +7,7 @@ const ProfileScreen = () => {
   const [nombre, setNombre] = useState("");
   const [numTel, setNumTel] = useState("");
   return (
-    <View>
+    <View style={styles.contenedor}>
       <Text style={styles.titulo}>Ingresá tus datos</Text>
       <TextInput
         placeholder="Ingresá tu nombre"
@@ -20,9 +20,13 @@ const ProfileScreen = () => {
         onChangeText={setNumTel}
       />
       <Button
+        color="#40E0D0"
         title="Continuar"
         onPress={() =>
-          navigation.navigate("ShowProfileScreen", { nombreUsuario: nombre, numeroDeTelefono: numTel })
+          navigation.navigate("ShowProfileScreen", {
+            nombreUsuario: nombre,
+            numeroDeTelefono: numTel,
+          })
         }
       />
     </View>
@@ -32,6 +36,11 @@ const ProfileScreen = () => {
 export default ProfileScreen;
 
 const styles = StyleSheet.create({
+  contenedor: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#fff",
+  },
   titulo: {
     fontSize: 18,
     fontWeight: "bold",
